@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Seleccion de Jugadores Ecuatorianos</title>
+        <link rel="stylesheet" type="text/css" href="estilo1.css"/>
+    </h:head>
+    <h:body>
+        <center>
+            <b>
+                <h2>Probabilidad de que un Jugador sea Convocado a la Seleccion Ecuatoriana</h2>
+            </b>
+            <img src="ju.png" width="309" height="163" alt="juga"/>
+        </center>
+        <h:form>
+            <h3><h:outputText value="Seleccione la posicion de los Jugadores"> </h:outputText></h3>
+            <h:selectOneMenu value="#{bean.opcion}" >  
+                <f:selectItem itemLabel="delantero" itemValue="delantero" />  
+                <f:selectItem itemLabel="defensa" itemValue="defensa" />  
+                <f:selectItem itemLabel="volante" itemValue="volante" />  
+                <f:selectItem itemLabel="portero" itemValue="portero" />  
+            </h:selectOneMenu >
+            <h:commandButton value="CARGAR"  action="#{bean.cargar()}"></h:commandButton>
+        </h:form>
+        <center>
+            <h3>Jugadores de la posicion seleccionada</h3>
+            <f:view>
+                <table id="example" class="display" width="50%" cellspacing="0" style="border: 1px">
+                    
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>edad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                            <td>Friczon_Erazo</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>Gabriel_Achiller</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>Jorge_guagua</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>Luis_Canga</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <h:form>
+                        <h:commandButton value="Resultado"  action="#{bean.obtener_resultado()}"></h:commandButton>
+                        <p> <h:outputText value="#{bean.test.presentacion}" rendered="#{bean.test.ver}"/></p>
+                         <p><h:commandLink value="ir a Red Beyesiana" action="#{beanTest.rb.leer()}" /></p>
+                    </h:form>
+                </p>
+                 <p>
+                 <h:form>
+                </h:form>
+                </p>
+            </f:view>
+        </center>
+    </h:body>
+</html>
